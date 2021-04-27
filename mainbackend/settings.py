@@ -17,6 +17,8 @@ DEBUG = os.environ.get('DEBUG', False)
 ALLOWED_HOSTS = [
     'trendarchive.herokuapp.com',
     'www.thetrendarchive.com',
+    '127.0.0.1',
+    'localhost',
 ]
 
 
@@ -135,3 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 db_url = ""
+
+IS_HEROKU = os.environ.get('IS_HEROKU')
+if IS_HEROKU:
+    import django_heroku
+    django_heroku.settings(locals())

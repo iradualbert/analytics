@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import Post, Traffic
 
+class PostAdmin(admin.ModelAdmin):
+    list_display = ["title", "slug", "views"]
 
-admin.site.register(Post)
-admin.site.register(Traffic)
+class TrafficAdmin(admin.ModelAdmin):
+    list_display = ['post', 'date']
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(Traffic, TrafficAdmin)
