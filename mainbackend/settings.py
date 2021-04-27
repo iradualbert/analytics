@@ -130,3 +130,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #     os.path.join(os.path.join(BASE_DIR, 'client'), 'frontend/build')
 # )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+db_url = ""
