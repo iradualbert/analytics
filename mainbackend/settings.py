@@ -14,7 +14,10 @@ SECRET_KEY = 'django-insecure--#d*3!6=lx#kbug_oz-ou^-3li6^ln9s+_hz_cbjy5y8gr-z9t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'trendarchive.herokuapp.com',
+    'www.thetrendarchive.com',
+]
 
 
 # Application definition
