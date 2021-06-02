@@ -19,7 +19,7 @@ def add_view(request):
         post = Post.objects.get(slug=slug)
         post.views = 1 + post.views
         post.save()
-        post.add_view()
+        post.add_view(request)
     
     except ObjectDoesNotExist:
         post = Post(
@@ -28,7 +28,7 @@ def add_view(request):
             url=url
         )
         post.save()
-        post.add_view()
+        post.add_view(request)
     
     return JsonResponse({'status': 'ok'}, status=201)    
     
